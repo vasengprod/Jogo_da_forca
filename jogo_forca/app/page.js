@@ -15,10 +15,9 @@ export default function JogoForca() {
   const [tentativas, setTentativas] = useState(6);
   const [letrasUsadas, setLetrasUsadas] = useState([]);
   const [palavraOculta, setPalavraOculta] = useState([]);
-  const [status, setStatus] = useState("jogando"); // jogando | venceu | perdeu
+  const [status, setStatus] = useState("jogando");
   const [inputLetra, setInputLetra] = useState("");
 
-  // iniciar jogo
   useEffect(() => {
     iniciarJogo();
   }, []);
@@ -64,7 +63,7 @@ export default function JogoForca() {
 
   return (
     <div className={styles.container}>
-      <h1>🎯 Jogo da Forca</h1>
+      <h1>Jogo da Forca</h1>
 
       <div className={styles.palavra}>
         {palavraOculta.map((l, i) => (
@@ -93,8 +92,8 @@ export default function JogoForca() {
         ))}
       </div>
 
-      {status === "venceu" && <h2>🎉 Parabéns! Você acertou: {palavra}</h2>}
-      {status === "perdeu" && <h2>💀 Você perdeu! A palavra era: {palavra}</h2>}
+      {status === "venceu" && <h2>Parabéns! Você acertou: {palavra}</h2>}
+      {status === "perdeu" && <h2>Você perdeu! A palavra era: {palavra}</h2>}
 
       <button onClick={iniciarJogo}>🔄 Reiniciar</button>
     </div>
